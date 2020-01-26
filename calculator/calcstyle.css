@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+}
+#output {
+    border: 1px solid black;
+    width: 625px;
+    height: 90px;
+    margin: 5px auto;
+}
+.flex-box {
+    width: 625px;
+    height: 400px;
+    display: flex;
+    margin: 5px auto;
+}
+.keys{
+    width: 350px;
+    height: 390;
+    margin-right: 10px;
+}
+.keys2 {
+    width: 300px;
+    height: 390px;
+    margin-left: 25px;
+}
+.button {
+    border: 1px solid black;
+    width: 100px;
+    height: 90px;
+    display: inline-block;
+    margin: 2px auto;
+    box-shadow: 1px 1px 0px 0px;
+}
