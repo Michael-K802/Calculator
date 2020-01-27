@@ -28,10 +28,10 @@ let calc = {
         x: 0, // used in both output and solve
         y: 0, // used in both output and solve
         // used in operator part of the trifunc
-        isOperator: false,
+        isOperator: false, // not being reasigned?
         operationType: '',
         // used for solving in the solve part of the trifunc
-        isAnswer: false,
+        isAnswer: false, // not beiging reasigned?
     },
     writeToOutput(input){
         if (input){
@@ -47,7 +47,7 @@ let calc = {
                 final += number;
             }
             if (calc.mem.isOperator === true || calc.mem.isAnswer === true){
-                calc.mem.y = final;
+                calc.mem.y = final; // review bugs down to 
             } else {
                 calc.mem.x = final;
             }
@@ -146,7 +146,7 @@ let calc = {
                 calc.mem.digits = 0;
             } else {
                 console.log('nothing ran');
-            }
+            } // here
         }
     }
 }
