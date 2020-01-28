@@ -28,10 +28,10 @@ let calc = {
         x: 0, // used in both output and solve
         y: 0, // used in both output and solve
         // used in operator part of the trifunc
-        isOperator: false, // not being reasigned?
+        isOperator: false,
         operationType: '',
         // used for solving in the solve part of the trifunc
-        isAnswer: false, // not beiging reasigned?
+        isAnswer: false,
     },
     writeToOutput(input){
         if (input){
@@ -46,10 +46,16 @@ let calc = {
                 power = power/10;
                 final += number;
             }
-            if (calc.mem.isOperator === true || calc.mem.isAnswer === true){
-                calc.mem.y = final; // review bugs down to 
-            } else {
+            console.log(`value of is operator: ${calc.mem.isOperator}`)
+            if (calc.mem.isOperator === false){
                 calc.mem.x = final;
+                console.log(`The x value is ${calc.mem.x}`);
+                console.log(`value of is operator: ${calc.mem.isOperator}`)
+                
+            } else {
+                console.log(`value of is operator: ${calc.mem.isOperator}`)
+                calc.mem.y = final;
+                console.log(`The y value is ${calc.mem.y}`);
             }
             calc.output.innerHTML = final;
         }
@@ -72,8 +78,11 @@ let calc = {
             calc.writeToOutput();
         } else if (typeof inputOperation === 'string'){
             if (inputOperation === 'add'){
+                console.log("input - add accepted")
                 calc.mem.operationType = inputOperation
+                console.log(` operation type is ${calc.mem.operationType}`)
                 calc.mem.isOperation = true;
+                console.log(`isOperation is ${calc.mem.isOperation}`)
                 calc.mem.dataSet1 = [];
                 calc.mem.powerBy = 0;
                 calc.mem.digits = 0;
@@ -98,6 +107,7 @@ let calc = {
             } else {
                 console.log(`invalid operation: ${inputOperation}`);
             }
+            calc.mem.isOperation = true;
         } else if (solve === true){
             console.log('solve ran');
             if (calc.mem.operationType === 'add'){
@@ -113,7 +123,7 @@ let calc = {
                 calc.mem.dataSet1 = [];
                 calc.mem.powerBy = 0;
                 calc.mem.digits = 0;
-                calc.mem.y = '';
+                calc.mem.y = 0;
             } else if( calc.mem.operationType === 'sub'){
                 let answer = calc.mem.x - calc.mem.y;
                 calc.writeToOutput(answer);
@@ -146,7 +156,7 @@ let calc = {
                 calc.mem.digits = 0;
             } else {
                 console.log('nothing ran');
-            } // here
+            }
         }
     }
 }
