@@ -172,3 +172,4 @@ calc.keys.add.onclick = function(){
 calc.keys.equal.onclick = function(){
     calc.trifunc('',0,true);
 }
+// discontinued
